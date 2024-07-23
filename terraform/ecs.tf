@@ -69,12 +69,6 @@ resource "aws_ecs_service" "factorio" {
   launch_type     = "FARGATE"
   task_definition = aws_ecs_task_definition.factorio.arn
 
-  load_balancer {
-    container_name   = aws_ecs_task_definition.factorio.family
-    container_port   = 34197
-    target_group_arn = aws_lb_target_group.factorio.arn
-  }
-
   network_configuration {
     assign_public_ip = true
     security_groups  = [aws_security_group.factorio-ecs.id]

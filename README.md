@@ -6,7 +6,13 @@ Copy the server settings example file and adjust the settings.
 cd docker && cp server-settings{.example,}.json
 ```
 
-(Optional) Build the Docker image.
+Deploy the ECR repository to AWS.
+
+```shell
+make repo
+```
+
+(Optional) Test building the Docker image.
 
 ```shell
 make build

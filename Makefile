@@ -10,3 +10,8 @@ build:
 deploy: build
 	cd terraform && terraform init
 	cd terraform && terraform apply
+
+.PHONY: repo
+repo:
+	cd terraform && terraform init
+	cd terraform && terraform apply --target=aws_ecr_repository.factorio
